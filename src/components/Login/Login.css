@@ -1,11 +1,8 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: url('ruta/de/imagen.gif') no-repeat center center fixed;
+
+.login-container {
+    background: url('/gif.mp4') no-repeat center center fixed;
     background-size: cover;
     font-family: rubik, sans-serif;
-}
-.login-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,6 +14,7 @@ body {
 .login-container h2 {
     text-align: center;
 }
+
 .login-container input[type="text"],
 .login-container input[type="password"] {
     width: 100%;
@@ -35,4 +33,13 @@ body {
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
+}
+.logo {
+    width: 100%;
+    height: 100%;
+}
+.angry-multigradient {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(178deg, rgba(255,142,10,1) 0%, rgba(255,175,83,0.26) 18%, rgba(255,255,255,0.63) 60%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
 }

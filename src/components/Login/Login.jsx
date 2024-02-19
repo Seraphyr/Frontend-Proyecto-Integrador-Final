@@ -1,19 +1,22 @@
 import React from 'react'
 import './Login.css'
+import landingGif from '/gif-landing.gif'
 export default function Login() {
     return (
         <div className="angry-multigradient">
             <div className="login-container">
                 <div ><img src="/logo-large.png" className="logo" alt="" /></div>
-                <div className="gif">
-                    <video src="/gif.mp4" width={"100%"} height={"100%"} autoPlay>
-                    </video>
+                <h2>Música a medida.</h2>
+                <div>
+                    <img src="/gif-landing.gif" className="gif" />
+
                 </div>
-                <form id="login-form">
+                
+            </div>
+            <div className='btn-container'>
                     <button type="button" className='btn'>Registrarse Gratis</button>
                     <button type="button" className='btn-transparente'>Iniciar Sesión</button>
-                </form>
-            </div>
+                </div>
         </div>
 
     )

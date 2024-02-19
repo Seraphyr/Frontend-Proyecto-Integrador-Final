@@ -1,38 +1,69 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: url('ruta/de/imagen.gif') no-repeat center center fixed;
-    background-size: cover;
-    font-family: rubik, sans-serif;
-}
 .login-container {
+    font-family: rubik, sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    padding: 0px 20px 250px 20px !important;
     border-radius: 10px;
-}
-.login-container h2 {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 30.81px;
     text-align: center;
+    letter-spacing: -0.79px;
+
 }
-.login-container input[type="text"],
-.login-container input[type="password"] {
-    width: 100%;
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 480px 90px 24px 100px;
+
+}
+
+button {
     padding: 10px;
     margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-.login-container button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+    width: 100%;   
+    border-radius: 0px 16px 0px 16px;
     border: none;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #FF8E0A;
+    color: white;
     cursor: pointer;
+    z-index: 1;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.btn-transparente {
+    background-color: transparent;
+    color: black;
+}
+
+
+.logo {
+    width: 207.64px;
+    height: 72px;
+    object-fit: contain;
+
+}
+
+.angry-multigradient {
+    width: 360px;
+    height: 640px;
+    background: linear-gradient(178deg, rgba(255, 142, 10, 1) 0%, rgba(255, 175, 83, 0.26) 18%, rgba(255, 255, 255, 0.63) 60%, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%);
+}
+
+.gif {
+    width: 418px;
+    height: 792px;
+    display: flex;
+    opacity: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }

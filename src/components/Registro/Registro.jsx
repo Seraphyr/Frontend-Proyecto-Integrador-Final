@@ -1,7 +1,9 @@
+import Header from "../Header/Header";
+
 export default function Login() {
     return (
-        <>
-        <p>Registroasdasdasdasdasdasdasdasd</p>
+        <>      
+        <Header titulo={"Crear Cuenta"}/>
         </>
     )
 }

@@ -1,0 +1,46 @@
+.conteiner__registro{
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    width: 368px;
+    height: 792px;
+}
+
+
+.registro__titulo{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.registro__parrafo{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.registro__input{
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;   
+    border-radius: 0px 16px 0px 16px;  
+    font-size: 16px;
+    border: 1px solid #BFC0C1
+}
+
+.registro__input:focus{
+    outline: none;
+    border: 2px solid #FF8E0A
+}
+
+.registro__form__parrafo{
+    color: #BFC0C1;
+    font-size: 0.8rem;
+}
+
+.registro__boton{
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}

@@ -1,7 +1,34 @@
+import React, { useState } from 'react'
+import './InicioSesion.css'
+import eyeOpen from '/eyeOpen.png'
+import eyeClosed from '/eyeClosed.png'
+
 export default function Login() {
+    const [password, setPassword] = useState("");
+
+    const [showPassword, setShowPassword] = useState(false)
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
     return (
         <>
-        <h1>Inicio</h1>
+            <div className='form'>
+                <h1>Iniciar Sesión</h1>
+
+                <form className="form-inicio">
+                    <label>Nombre de Usuario o E-mail:</label>
+                    <input className="input-user" type="text" name="mara_pg" />
+                    <label >Contraseña:</label>
+                    <div>
+                        <input className="input-password" type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <img src={showPassword ? eyeOpen : eyeClosed} alt="toggle password visibility" onClick={togglePasswordVisibility} />
+                    </div>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+
+                <div className="passChange">¿Olvidaste tu contraseña?</div>
+            </div>
         </>
     )
 }

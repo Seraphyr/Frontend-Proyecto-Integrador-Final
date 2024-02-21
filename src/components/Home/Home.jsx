@@ -1,8 +1,19 @@
 import './home.css'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import Cookies from "js-cookie";
 
 export default function Home() {
+    const [token, setToken] = useState("");
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const t = Cookies.get("token");
+        setToken(t)
+        if(t == "" || t == undefined) {
+            navigate("/")
+        }
+    }, [])
     return (
         <>
             <div className="title-container">

@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import "./registro.css";
+import "./Registro.css";
 
 export default function Login() {
   return (

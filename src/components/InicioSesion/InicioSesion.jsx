@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './InicioSesion.css'
 import eyeOpen from '/eyeOpen.png'
 import eyeClosed from '/eyeClosed.png'
+import Header from '../Header/Header'
 
 export default function Login() {
     const [password, setPassword] = useState("");
@@ -14,7 +15,7 @@ export default function Login() {
     return (
         <>
             <div className='form'>
-                <h1>Iniciar Sesión</h1>
+            <Header titulo={"Iniciar Sesión"} />
 
                 <form className="form-inicio">
                     <label>Nombre de Usuario o E-mail:</label>

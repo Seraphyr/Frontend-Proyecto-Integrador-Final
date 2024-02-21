@@ -17,17 +17,44 @@ label {
     justify-content: flex-start;
 }
 
-.input-user,
-.input-password {
+.input-form {
     padding: 10px;
     margin: 10px 0;
     width: 250px;
     border-radius: 0px 16px 0px 16px;
-    border: 2px solid #FF8E0A;
-    color: white;
+    border: 2px solid #BFC0C1;
+    color: black;
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;
     z-index: 2;
     position: relative;
+}
+
+
+.input-form:focus {
+    outline: none;
+    border: 2px solid #FF8E0A
+}
+
+.eye-icon {
+    position: absolute;
+    width: 28px;
+    height: 27px;
+    left: 14rem;
+    top: 17.5rem;
+    z-index: 3;
+    cursor: pointer;
+}
+.passChange {
+    color: black;
+    cursor: pointer;
+    font-family: rubik, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: bold;
+    line-height: 30.81px;
+    letter-spacing: -0.79px;
+    text-align: center;
+    margin-top: 10px;
 }

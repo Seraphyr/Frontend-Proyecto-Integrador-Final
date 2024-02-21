@@ -19,11 +19,11 @@ export default function Login() {
 
                 <form className="form-inicio">
                     <label>Nombre de Usuario o E-mail:</label>
-                    <input className="input-user" type="text" name="mara_pg" />
+                    <input className="input-form" type="text" name="mara_pg" />
                     <label >Contraseña:</label>
                     <div>
-                        <input className="input-password" type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
-                        <img src={showPassword ? eyeOpen : eyeClosed} alt="toggle password visibility" onClick={togglePasswordVisibility} />
+                        <input className="input-form" type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <img src={showPassword ? eyeOpen : eyeClosed} alt="toggle password visibility" onClick={togglePasswordVisibility} className='eye-icon' />
                     </div>
                     <button type="submit">Iniciar Sesión</button>
                 </form>

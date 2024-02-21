@@ -1,5 +1,5 @@
 import arrow from "../../assets/images/homepage/arrow.png";
-import "./Header.css";
+import "./header.css";
 
 export default function Header({ titulo }) {
   return (

@@ -2,6 +2,7 @@ import Header from "../Header/Header";
 import "./registro.css";
 import { Link } from "react-router-dom";
 
+
 export default function Registro() {
   return (
     <>

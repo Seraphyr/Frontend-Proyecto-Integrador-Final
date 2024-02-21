@@ -1,0 +1,33 @@
+.form-inicio {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 24px 24px 24px 24px;
+
+}
+
+label {
+    font-family: rubik, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 30.81px;
+    letter-spacing: -0.79px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.input-user,
+.input-password {
+    padding: 10px;
+    margin: 10px 0;
+    width: 250px;
+    border-radius: 0px 16px 0px 16px;
+    border: 2px solid #FF8E0A;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 2;
+    position: relative;
+}

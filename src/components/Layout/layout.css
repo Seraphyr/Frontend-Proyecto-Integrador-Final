@@ -1,5 +1,9 @@
 .angry-multigradient {
     width: 360px;
     height: 640px;
-    background: linear-gradient(178deg, rgba(255, 142, 10, 1) 0%, rgba(255, 175, 83, 0.26) 18%, rgba(255, 255, 255, 0.63) 60%, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%);
-}
+    background-image: linear-gradient(
+        rgba(255, 142, 10, 0.12) 40px,
+        rgba(255, 142, 10, 0.03) 90px,
+        rgba(253, 254, 255, 0) 160px
+      );
+    }

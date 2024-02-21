@@ -1,7 +1,8 @@
-
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export default function useUsuarios(){
-
+    const navigate = useNavigate();
 
     const login = async (username, password) => {
         const response = await fetch("http://localhost:3000/login", {
@@ -17,8 +18,13 @@ export default function useUsuarios(){
         });
 
         const data = await response.json()
-        console.log(data);
-        alert(data.usuario.nombre_de_usuario)
+        
+        if (response.ok && data.token) {
+            Cookies.set("token", data.token, {expires: 0.01});
+            navigate("/home")
+        } else {
+            alert(data.error)
+        }
     }
 
     return{

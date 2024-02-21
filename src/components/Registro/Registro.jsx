@@ -1,7 +1,8 @@
 import Header from "../Header/Header";
 import "./registro.css";
+import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Registro() {
   return (
     <>
       <Header titulo={"Crear Cuenta"} />
@@ -20,7 +21,9 @@ export default function Login() {
               Deberás poder confirmarlo luego.
             </p>
             <div className="registro__boton">
-              <button>Continuar</button>
+              <Link to={"/registro2"}>
+                <button className="boton__registro">Continuar</button>
+              </Link>
             </div>
           </form>
         </div>

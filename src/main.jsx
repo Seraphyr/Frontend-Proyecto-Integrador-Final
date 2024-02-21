@@ -6,6 +6,7 @@ import Login from './components/Login/Login.jsx'
 import Layout from './components/Layout/Layout.jsx';
 import Registro from './components/Registro/Registro.jsx';
 import InicioSesion from './components/InicioSesion/InicioSesion.jsx';
+import Registro2 from './components/Registro2/Registro2.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/registro",
         element: <Registro/>,
+      },
+      {
+        path: "/registro2",
+        element: <Registro2/>,
       },
       {
         path: "/iniciosesion",

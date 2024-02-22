@@ -1,7 +1,9 @@
 import './home.css'
+import Barra from '../Barra/Barra'
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Cookies from "js-cookie";
+
 
 export default function Home() {
     const [token, setToken] = useState("");
@@ -53,12 +55,13 @@ export default function Home() {
         </div>
     </div>
 </div>
-<div className="icon-bar">
+<Barra />
+{/* <div className="icon-bar">
     <img src="/home.png" alt="Home" />
     <img src="/search.png" alt="Search" />
     <img src="/user-profile.png" alt="Profile" />
     <img src="/friends.png" alt="Friends" />
-</div>
+</div> */}
         </>
     )
 }

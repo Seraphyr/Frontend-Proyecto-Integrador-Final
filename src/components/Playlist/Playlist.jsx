@@ -1,7 +1,10 @@
+import './playlist.css'
+import Header from '../Header/Header';
+
 export default function Login() {
     return (
         <>
-        <h1>Playlist</h1>
+        <Header titulo={"Playlist"}/>
         </>
     )
 }

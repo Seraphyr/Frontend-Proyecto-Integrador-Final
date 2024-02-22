@@ -10,6 +10,7 @@ import Home from './components/Home/Home.jsx'
 import Registro2 from './components/Registro2/Registro2.jsx';
 import PerfilUsuario from './components/PerfilUsuario/PerfilUsuario.jsx';
 import Settings from './components/Settings/Settings.jsx';
+import Playlist from './components/Playlist/Playlist.jsx';
 
 
 
@@ -37,7 +38,6 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
-
       },
       {
         path: "/perfil",
@@ -46,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/settings",
         element: <Settings />,
+      },
+      {
+        path: "/playlist",
+        element: <Playlist />,
       },
     ]
   }

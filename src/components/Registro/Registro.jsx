@@ -2,8 +2,16 @@ import Header from "../Header/Header";
 import "./Registro.css";
 import { Link } from "react-router-dom";
 
+export default function Registro({setVerRegistro1, setVerRegistro2, setEmail}) {
+  
 
-export default function Registro() {
+async function handleOnSumbit(e) {
+  e.preventDefault();
+  setVerRegistro1("noVer")
+  setVerRegistro2("ver")
+  setEmail(e.target["registroEmail"].value)
+}
+
   return (
     <>
       <Header titulo={"Crear Cuenta"} />
@@ -11,7 +19,7 @@ export default function Registro() {
         <h1 className="registro__titulo">¿Cuál es tu correo eléctronico?</h1>
         <div className="registro__form">
           <p className="registro__parrafo">Correo electónico:</p>
-          <form action="">
+          <form action="" onSubmit={handleOnSumbit}>
             <input
               type="text"
               className="registro__input"
@@ -22,9 +30,9 @@ export default function Registro() {
               Deberás poder confirmarlo luego.
             </p>
             <div className="registro__boton">
-              <Link to={"/registro2"}>
+             
                 <button className="boton__registro">Continuar</button>
-              </Link>
+             
             </div>
           </form>
         </div>

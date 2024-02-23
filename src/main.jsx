@@ -4,10 +4,10 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from './components/Login/Login.jsx'
 import Layout from './components/Layout/Layout.jsx';
-import Registro from './components/Registro/Registro.jsx';
+/* import Registro from './components/Registro/Registro.jsx'; */
 import InicioSesion from './components/InicioSesion/InicioSesion.jsx';
 import Home from './components/Home/Home.jsx'
-import Registro2 from './components/Registro2/Registro2.jsx';
+import Registros from './components/Registros/Registros.jsx';
 import PerfilUsuario from './components/PerfilUsuario/PerfilUsuario.jsx';
 import Settings from './components/Settings/Settings.jsx';
 import Playlist from './components/Playlist/Playlist.jsx';
@@ -25,12 +25,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/registro",
-        element: <Registro />,
+        element: <Registros/>,
       },
-      {
-        path: "/registro2",
-        element: <Registro2 />,
-      },
+      /* {
+        path: "/registro2/",
+        element: <Registro2/>,
+      }, */
       {
         path: "/iniciosesion",
         element: <InicioSesion />,

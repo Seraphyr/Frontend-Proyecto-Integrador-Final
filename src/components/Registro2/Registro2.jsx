@@ -1,7 +1,18 @@
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import "./registro2.css";
 
-export default function Registro2() {
+export default function Registro2({setVerRegistro1, setVerRegistro2, setUsername, setPassword, email, username, password ,registro}) {
+const navigate = useNavigate()
+  async function handleOnSumbit(e) {
+    e.preventDefault();
+    setUsername(e.target["registroNombre"].value)
+    setPassword(e.target["registroContra"].value)
+    setVerRegistro1("ver")
+    setVerRegistro2("noVer")
+    registro(email, username, password)
+  }
+
   return (
     <>
       <Header titulo={"Crear Cuenta"} />
@@ -10,7 +21,7 @@ export default function Registro2() {
           Ingresa un nombre de usuario y contraseña:
         </h1>
         <div className="registro__form2">
-          <form action="">
+          <form action="" onSubmit={handleOnSumbit}>
             <p className="registro__parrafo2">Nombre de Usuario:</p>
             <input
               type="text"
@@ -30,7 +41,9 @@ export default function Registro2() {
               <label className="checkbox__label">He leído y acepto los <span className="TyC">Términos</span> y <span className="TyC">Condiciones</span></label>
             </div>
             <div className="registro__boton2">
+              {/* <Link to={"/"}> */}
               <button>Continuar</button>
+              {/* </Link> */}
             </div>
           </form>
         </div>

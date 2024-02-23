@@ -6,7 +6,7 @@ import Header from '../Header/Header'
 import useUsuarios from '../../../useUsuarios'
 
 
-export default function Login() {
+export default function InicioSesion() {
     const {login} = useUsuarios()
 
     const [password, setPassword] = useState("");

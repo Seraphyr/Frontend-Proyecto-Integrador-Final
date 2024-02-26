@@ -19,12 +19,13 @@
     align-items: center;
     justify-content: center;
     padding: 480px 90px 24px 100px;
+    
     z-index: 2;
     
 }
 
-button {
-    padding: 10px;
+.btn__login {
+    padding: 12px 50px;
     margin: 10px 0;
     width: 100%;   
     border-radius: 0px 16px 0px 16px;
@@ -52,13 +53,18 @@ button {
     position: relative;
 }
 
+.logo__titulo{
+    position: relative;
+    top: 300px;
+}
+
 .container-titulo{
     z-index: 2;
     position: relative;
 }
 
 .gif {
-    width: 418px;
+    width: 368px;
     height: 792px;
     display: flex;
     opacity: 50%;

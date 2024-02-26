@@ -3,7 +3,7 @@
     flex-direction: column;
     padding: 0 30px;
     width: 368px;
-    height: 792px;
+    height: 730px;
 }
 
 .registro__titulo2{
@@ -35,10 +35,26 @@
 }
 
 .registro__boton2{
-    height: 400px;
+    height: 250px;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: center;
+    /* margin-bottom: 30px; */
+}
+
+.boton__registro2{ 
+    padding: 12px 50px;
+    margin: 10px 0;
+    width: 100%;   
+    border-radius: 0px 16px 0px 16px;
+    border: none;
+    background-color: #FF8E0A;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 2;
+    position: relative;   
 }
 
 .contenedor__checkbox{
@@ -49,23 +65,24 @@
     gap: 10px
 }
 
-.registro__checkbox{
-    appearance: none;
-    border: 2px solid #BFC0C1;
-    border-radius: 0px 12px 0px 12px;  
-    width: 25px;
-    height: 25px;
-}
-
-.registro__checkbox:checked{
-    appearance: none;
-    border: 2px solid black;
-}
-
 .checkbox__label{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .TyC{
     color: #FF8E0A;
+}
+
+.registro__password{
+    position: relative;
+}
+
+.eye-icon2 {
+    position: absolute;
+    width: 28px;
+    height: 27px;
+    right: 15px;
+    top: 16px;
+    z-index: 3;
+    cursor: pointer;
 }

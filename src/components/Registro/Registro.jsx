@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import "./Registro.css";
+import "./registro.css";
 import { Link } from "react-router-dom";
 
 export default function Registro({setVerRegistro1, setVerRegistro2, setEmail}) {

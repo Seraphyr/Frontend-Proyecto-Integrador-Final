@@ -10,8 +10,10 @@ import Home from './components/Home/Home.jsx'
 import Registros from './components/Registros/Registros.jsx';
 import PerfilUsuario from './components/PerfilUsuario/PerfilUsuario.jsx';
 import Settings from './components/Settings/Settings.jsx';
+import Buscador from './components/Buscador/Buscador.jsx';
 import CupidoMusical from './components/CupidoMusical/CupidoMusical.jsx';
 import Playlist from './components/Playlist/Playlist.jsx';
+
 
 
 
@@ -49,12 +51,19 @@ const router = createBrowserRouter([
         element: <Settings />,
       },
       {
+
+        path: "/buscador",
+        element: <Buscador />,
+      }
+      
+
         path: "/cupidoMusical",
-        element: <CupidoMusical/>
+        element: <CupidoMusical/>,
       }
         path: "/playlist",
         element: <Playlist />,
       },
+
     ]
   }
 ])

@@ -10,6 +10,8 @@ import Registros from './components/Registros/Registros.jsx';
 import PerfilUsuario from './components/PerfilUsuario/PerfilUsuario.jsx';
 import Settings from './components/Settings/Settings.jsx';
 import CupidoMusical from './components/CupidoMusical/CupidoMusical.jsx';
+import Buscador from './components/Buscador/Buscador.jsx';
+import Playlist from './components/Playlist/Playlist.jsx'
 
 
 
@@ -33,11 +35,18 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
-
+      },
+      {
+        path: "/buscador",
+        element: <Buscador />,
       },
       {
         path: "/perfil",
         element: <PerfilUsuario />,
+      },
+      {
+        path: "/playlist",
+        element: <Playlist />,
       },
       {
         path: "/settings",

@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { playlists } from '../../../api/playlists';
+import Barra from '../Barra/Barra';
 
 
 export default function Playlist() {
@@ -70,6 +71,7 @@ export default function Playlist() {
                     <div className="list-songs-pg" />
  {/* Aca se llama componente que agrega lista con img del artista, titulo cancion y nombre artista */}
                 </div>
+                <Barra />
             </div>
         </div>
     )

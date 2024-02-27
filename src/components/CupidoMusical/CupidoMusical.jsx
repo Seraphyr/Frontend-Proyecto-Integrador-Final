@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import useArtistas from "../../../useArtistas"
 import './cupidoMusical.css'
 import usePlaylist from "../../../usePlaylist"
+import Header from "../Header/Header"
 
 export default function CupidoMusical() {
     const {verArtistas, listaArtistas} = useArtistas()
@@ -24,7 +25,7 @@ export default function CupidoMusical() {
     console.log(listaID);
     return (
         <>
-        <h1>Cupido</h1>
+        <Header titulo="Cupido Musical" />
         <div>
         {
             listaArtistas.map((artista) => {

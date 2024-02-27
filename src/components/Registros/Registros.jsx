@@ -2,7 +2,7 @@ import "./registros.css"
 import { useState } from 'react';
 import Registro from '../Registro/Registro.jsx';
 import Registro2 from '../Registro2/Registro2.jsx';
-import useUsuarios from '../../../useUsuarios'
+import useUsuarios from '../../../api/useUsuarios.jsx'
 
 
 

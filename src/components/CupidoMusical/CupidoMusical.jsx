@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import useArtistas from "../../../useArtistas"
+import useArtistas from "../../../api/useArtistas"
 import './cupidoMusical.css'
-import usePlaylist from "../../../usePlaylist"
+import usePlaylist from "../../../api/usePlaylist"
 import Header from "../Header/Header"
 
 export default function CupidoMusical() {

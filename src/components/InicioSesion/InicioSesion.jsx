@@ -3,7 +3,7 @@ import './InicioSesion.css'
 import eyeOpen from '/eyeOpen.png'
 import eyeClosed from '/eyeClosed.png'
 import Header from '../Header/Header'
-import useUsuarios from '../../../useUsuarios'
+import useUsuarios from '../../../api/useUsuarios'
 
 
 export default function InicioSesion() {

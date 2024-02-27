@@ -4,16 +4,12 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from './components/Login/Login.jsx'
 import Layout from './components/Layout/Layout.jsx';
-/* import Registro from './components/Registro/Registro.jsx'; */
 import InicioSesion from './components/InicioSesion/InicioSesion.jsx';
 import Home from './components/Home/Home.jsx'
 import Registros from './components/Registros/Registros.jsx';
 import PerfilUsuario from './components/PerfilUsuario/PerfilUsuario.jsx';
 import Settings from './components/Settings/Settings.jsx';
-import Buscador from './components/Buscador/Buscador.jsx';
 import CupidoMusical from './components/CupidoMusical/CupidoMusical.jsx';
-import Playlist from './components/Playlist/Playlist.jsx';
-
 
 
 
@@ -30,10 +26,6 @@ const router = createBrowserRouter([
         path: "/registro",
         element: <Registros/>,
       },
-      /* {
-        path: "/registro2/",
-        element: <Registro2/>,
-      }, */
       {
         path: "/iniciosesion",
         element: <InicioSesion />,
@@ -41,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+
       },
       {
         path: "/perfil",
@@ -51,19 +44,9 @@ const router = createBrowserRouter([
         element: <Settings />,
       },
       {
-
-        path: "/buscador",
-        element: <Buscador />,
-      }
-      
-
         path: "/cupidoMusical",
-        element: <CupidoMusical/>,
+        element: <CupidoMusical/>
       }
-        path: "/playlist",
-        element: <Playlist />,
-      },
-
     ]
   }
 ])

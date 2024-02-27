@@ -2,7 +2,7 @@ import './playlist.css'
 import Header from '../Header/Header';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { playlists } from '../../../api/playlistsAPI';
+import { playlists } from '../../../api/playlists';
 
 
 export default function Playlist() {

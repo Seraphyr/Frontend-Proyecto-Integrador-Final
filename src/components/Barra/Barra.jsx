@@ -1,28 +1,25 @@
-
 import './barra.css';
-import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
-
+import { Link, useLocation } from 'react-router-dom';
+import React from 'react';
 
 function Barra() {
-    const [iconoActivo, setIconoActivo] = useState('/home');
+    const location = useLocation();
+
     return (
         <div className="fixed-bar">
-            <Link to="/home" onClick={() => setIconoActivo('/home')}>
-                <img className="icono-barra" src={iconoActivo === '/home' ? '/casanegra.png' : '/casatrans.png'} alt="Home" />
+            <Link to="/home">
+                <img className="icono-barra" src={location.pathname === '/home' ? '/casanegra.png' : '/casatrans.png'} alt="Home" />
             </Link>
-            <Link to="/home" onClick={() => setIconoActivo('/search')}>
-                <img className="icono-barra" src={iconoActivo === '/search' ? '/lupanegra.png' : '/lupatrans.png'} alt="Search" />
+            <Link to="/buscador">
+                <img className="icono-barra" src={location.pathname === '/buscador' ? '/lupanegra.png' : '/lupatrans.png'} alt="Search" />
             </Link>
-            <Link to="/home" onClick={() => setIconoActivo('/profile')}>
-                <img className="icono-barra" src={iconoActivo === '/profile' ? '/amigonegro.png' : '/amigotrans.png'} alt="Profile" />
+            <Link to="/perfil">
+                <img className="icono-barra" src={location.pathname === '/perfil' ? '/amigonegro.png' : '/amigotrans.png'} alt="Profile" />
             </Link>
-            <Link to="/home" onClick={() => setIconoActivo('/friends')}>
-                <img className="icono-barra" src={iconoActivo === '/friends' ? '/amigosnegro.png' : '/amigostrans.png'} alt="Friends" />
+            <Link to="/home">
+                <img className="icono-barra" src={location.pathname === '/friends' ? '/amigosnegro.png' : '/amigostrans.png'} alt="Friends" />
             </Link>
         </div>
-        
-        
     );
 }
 

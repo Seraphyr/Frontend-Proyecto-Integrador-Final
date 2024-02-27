@@ -1,0 +1,30 @@
+
+.inputbuscador {
+    width: 320px;
+    height: 48px;
+    margin: 24px;
+    margin-top: 10px;
+    border-radius: 0px 16px 0px 16px;
+    background-image: url("lupatrans.png"); 
+    background-repeat: no-repeat;
+    background-position: 10px center; 
+    padding-left: 70px;
+    background-image: #BFC0C1; 
+    background-size: 30px;
+  }
+
+  .inputbuscador:focus {
+    background-image: none;
+  }
+  
+  .inputbuscador:focus::placeholder {
+    color: transparent;
+  }
+
+
+
+.title {
+    padding: 40px 30px;
+    font-size: 36px;
+}
+

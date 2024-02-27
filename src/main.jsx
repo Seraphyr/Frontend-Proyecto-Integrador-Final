@@ -10,6 +10,7 @@ import Home from './components/Home/Home.jsx'
 import Registro2 from './components/Registro2/Registro2.jsx';
 import PerfilUsuario from './components/PerfilUsuario/PerfilUsuario.jsx';
 import Settings from './components/Settings/Settings.jsx';
+import Buscador from './components/Buscador/Buscador.jsx';
 
 
 
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
         path: "/settings",
         element: <Settings />,
       },
+      {
+        path: "/buscador",
+        element: <Buscador />,
+      }
+      
     ]
   }
 ])

@@ -1,7 +1,44 @@
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import "./registro2.css";
+import { useState } from "react";
+import eyeOpen from "/eyeOpen.png";
+import eyeClosed from "/eyeClosed.png";
+import checkboxCheck from "/checkboxCheck.svg"
+import checkboxNotCheck from "/checkboxNotCheck.svg"
 
-export default function Registro2() {
+export default function Registro2({
+  setVerRegistro1,
+  setVerRegistro2,
+  setUsername,
+  setPassword,
+  email,
+  username,
+  password,
+  registro,
+}) {
+  const [passwordR, setPasswordR] = useState("");
+  const [showPasswordR, setShowPasswordR] = useState(false);
+
+  const [checkbox, setCheckbox] = useState(false)
+
+  function cambiarCheckbox() {
+    setCheckbox(!checkbox)
+  }
+
+  const togglePasswordVisibility = () => {
+    setShowPasswordR(!showPasswordR);
+  };
+
+  async function handleOnSumbit(e) {
+    e.preventDefault();
+    setUsername(e.target["registroNombre"].value);
+    setPassword(e.target["registroContra"].value);
+    setVerRegistro1("ver");
+    setVerRegistro2("noVer");
+    registro(email, username, password);
+  }
+
   return (
     <>
       <Header titulo={"Crear Cuenta"} />
@@ -10,7 +47,7 @@ export default function Registro2() {
           Ingresa un nombre de usuario y contraseña:
         </h1>
         <div className="registro__form2">
-          <form action="">
+          <form action="" onSubmit={handleOnSumbit}>
             <p className="registro__parrafo2">Nombre de Usuario:</p>
             <input
               type="text"
@@ -19,18 +56,31 @@ export default function Registro2() {
               id="registroNombre"
             />
             <p className="registro__parrafo2">Contraseña:</p>
+            <div className="registro__password">
             <input
-              type="password"
               className="registro__input2"
               name="registroContra"
               id="registroContra"
+              type={showPasswordR ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
+            <img
+              src={showPasswordR ? eyeOpen : eyeClosed}
+              alt="toggle password visibility"
+              onClick={togglePasswordVisibility}
+              className="eye-icon2"
+            />
+            </div>
             <div className="contenedor__checkbox">
-              <input type="checkbox" className="registro__checkbox" />
-              <label className="checkbox__label">He leído y acepto los <span className="TyC">Términos</span> y <span className="TyC">Condiciones</span></label>
+              <img src={checkbox ? checkboxCheck : checkboxNotCheck} alt="checkbox" onClick={cambiarCheckbox}/>
+              <label className="checkbox__label">
+                He leído y acepto los <span className="TyC"> &nbsp; Términos &nbsp;  </span> y
+                <span className="TyC"> &nbsp; Condiciones</span>
+              </label>
             </div>
             <div className="registro__boton2">
-              <button>Continuar</button>
+              <button className="boton__registro2">Continuar</button>
             </div>
           </form>
         </div>

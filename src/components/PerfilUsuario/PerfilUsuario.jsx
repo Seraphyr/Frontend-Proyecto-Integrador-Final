@@ -24,7 +24,7 @@ function Profile() {
         </div>
       </header>
 
-        <div className="section-playlist-ptofile">
+        <div className="section-playlist-profile">
           <span>Mis Playlists</span>
           <div className="mid-line-profile"></div>
 

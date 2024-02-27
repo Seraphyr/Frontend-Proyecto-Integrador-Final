@@ -22,7 +22,7 @@ export default function useUsuarios(){
         const data = await response.json()
         
         if (response.ok && data.token) {
-            Cookies.set("token", data.token, {expires:0.0007});
+            Cookies.set("token", data.token, {expires:0.007});
             navigate("/home")
         } else {
             alert(data.error)

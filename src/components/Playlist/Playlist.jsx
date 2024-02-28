@@ -2,13 +2,13 @@ import './playlist.css'
 import Header from '../Header/Header';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { playlists } from '../../../api/playlists';
+/* import { playlists } from '../../../api/playlists'; */
 import Barra from '../Barra/Barra';
 
 
-export default function Playlist() {
+export default function Playlist({playlist}) {
 
-    const [newPlaylist, setNewPlaylist] = useState([]);
+    /* const [newPlaylist, setNewPlaylist] = useState([]);
     const { id } = useParams();
     const initialValue = 0;
     useEffect(() => {
@@ -34,7 +34,7 @@ export default function Playlist() {
             ? `${Math.floor(result / 3600)}h ${Math.floor(result / 60)}m`
             : ` ${Math.floor(result / 60)}m ${result % 60}s`;
     };
-
+ */
 
 
     return (
@@ -53,7 +53,7 @@ export default function Playlist() {
                     </div>
 
                     <div className="row-icons flex-span">
-                        <span>{durationSong()}</span>
+                        <span>{/* {durationSong()} */}</span>
                         <img id="small-icon2" src="/clock.svg" alt="" />
                     </div>
                 </section>
@@ -69,6 +69,19 @@ export default function Playlist() {
                 </section>
                 <div className="main-playlist-wrap">
                     <div className="list-songs-pg" />
+
+                    {
+            playlist.map((cancion) => {
+                return(
+                    <div key={cancion.id} className='cancion'>
+                        <p>{cancion.nombre}</p> 
+                        <img src={cancion.imagen} alt="" className='cancion__imagen'/>  
+                        <p>{cancion.nombre_artista}</p>
+                        <p>{cancion.duracion.minutes}.{cancion.duracion.seconds}</p>   
+                        </div>
+                )
+            })
+        }
  {/* Aca se llama componente que agrega lista con img del artista, titulo cancion y nombre artista */}
                 </div>
                 <Barra />

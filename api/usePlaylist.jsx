@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function usePlaylist(){
+
+    const [playlist, setPlaylist] = useState([])
 
     const cupidoMusical = async (listaArtistas) => {
         const response = await fetch("http://localhost:3000/crearCupidoMusical",{
@@ -17,12 +19,13 @@ export default function usePlaylist(){
             })        
         })
         const data = await response.json()
-        console.log(data);
+        setPlaylist(data)
     }
 
 
 return{
-    cupidoMusical
+    cupidoMusical,
+    playlist
 }
 
 }

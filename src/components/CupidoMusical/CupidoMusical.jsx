@@ -3,12 +3,17 @@ import useArtistas from "../../../api/useArtistas"
 import './cupidoMusical.css'
 import usePlaylist from "../../../api/usePlaylist"
 import Header from "../Header/Header"
+import Playlist from "../Playlist/Playlist"
 
 export default function CupidoMusical() {
+    const [verCupidoMusical, setVerCupidoMusical] = useState("ver")
+    const [verPlaylist, setVerPlaylist] = useState("noVer")
+
     const {verArtistas, listaArtistas} = useArtistas()
-    const {cupidoMusical} = usePlaylist()
+    const {cupidoMusical, playlist} = usePlaylist()
 
     const [listaID, setListaID] = useState([])
+
 
     function recuperarID(artistaID) {
         setListaID([...listaID, artistaID])
@@ -19,14 +24,16 @@ export default function CupidoMusical() {
     }, [])
 
     function crearPlaylist(){
-        cupidoMusical(listaID)
+        cupidoMusical(listaID)  
+        setVerPlaylist("ver")
+        setVerCupidoMusical("noVer")
     }
 
-    console.log(listaID);
     return (
         <>
+         <div className={verCupidoMusical}>
         <Header titulo="Cupido Musical" />
-        <div>
+       
         {
             listaArtistas.map((artista) => {
                 return(
@@ -37,7 +44,14 @@ export default function CupidoMusical() {
                 )
             })
         }
+
+
+
         <button onClick={crearPlaylist}>Crear Playlist</button>
+        </div>
+
+        <div className={verPlaylist}>
+            <Playlist playlist={playlist}/>
         </div>
         </>
     )

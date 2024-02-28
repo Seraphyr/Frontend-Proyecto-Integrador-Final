@@ -1,10 +1,18 @@
 .angry-multigradient {
   width: 368px;
   height: 792px;
-    background-image: linear-gradient(
-        rgba(255, 142, 10, 0.12) 40px,
-        rgba(255, 142, 10, 0.03) 90px,
-        rgba(253, 254, 255, 0) 160px
-      );
-      margin: auto;
-    }
+  background-image: linear-gradient(
+    rgba(255, 142, 10, 0.12) 40px,
+    rgba(255, 142, 10, 0.03) 90px,
+    rgba(253, 254, 255, 0) 160px   
+  )
+}
+
+.contenedor{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}

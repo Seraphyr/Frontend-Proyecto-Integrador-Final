@@ -6,6 +6,8 @@ import Header from "../Header/Header"
 import Playlist from "../Playlist/Playlist"
 
 export default function CupidoMusical() {
+
+    
     const [verCupidoMusical, setVerCupidoMusical] = useState("ver")
     const [verPlaylist, setVerPlaylist] = useState("noVer")
 

@@ -16,6 +16,7 @@ function Buscador() {
     setBusqueda(evento.target.value);
   };
 
+  
   const cancionesFiltradas = canciones.filter(cancion => cancion.toLowerCase().includes(busqueda.toLowerCase()));
 
   return (

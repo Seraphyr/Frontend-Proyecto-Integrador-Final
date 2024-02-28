@@ -1,0 +1,22 @@
+.swiper-slide {
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    padding: 20px;
+  }
+  
+  .swiper-slide p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .swiper-slide button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 4.5rem;
+  }

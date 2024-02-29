@@ -1,90 +1,122 @@
-import './musicaContextual.css'
-import Header from '../Header/Header'
-import useMusicaContextual from '../../../api/useMusicaContextual'
-import { useEffect } from 'react'
+import "./musicaContextual.css";
+import Header from "../Header/Header";
+import useMusicaContextual from "../../../api/useMusicaContextual";
+import { useEffect, useState } from "react";
+import usePlaylist from "../../../api/usePlaylist";
+import Playlist from "../Playlist/Playlist"
 
 export default function MusicaContextual() {
 
-    const {verActividad, verEstadoAnimo, verClima, verGenero,
-        listaActividad, listaEstadoAnimo, listaClima, listaGenero } = useMusicaContextual()
+  const [verMusicaContextual,setVerMusicaContextual] = useState("ver")
+  const [verPlaylist, setVerPlaylist] = useState("noVer")
 
-        useEffect(() => {
-            verActividad(),
-            verEstadoAnimo(),
-            verClima(),
-            verGenero()
-        }, [])
-    return (
-        <>
-        <Header titulo="Música Contextual"/>
-        <div className='contenedor__MContextual'>
-        <form action="" >
-            <label className='MC__label'>¿Cuál es la ocasión?</label>
-            <select name="" id="" className='MC__select'>
-            <option disabled selected>Actividad</option>
-                {listaActividad.map((actividad) => {
-                    
-                    return(
-                        <>
-                            <option key={actividad.id} value={actividad.id} >
-                                {actividad.nombre}
-                            </option>
-                        </>
-                    )
-                })
+  const {musicaContextual, playlistMC} = usePlaylist()
 
-                }
-            </select>
+  const [listaGeneros, setListaGeneros] = useState([])
 
-            <label className='MC__label'>¿Cómo te sientes?</label>
-            <select name="" id="" className='MC__select'>
-            <option disabled selected>Estado de Ánimo</option>
-                {listaEstadoAnimo.map((estadoAnimo) => {
-                    return(
-                        <>
-                            <option key={estadoAnimo.id} value={estadoAnimo.id}>
-                                {estadoAnimo.nombre}
-                            </option>
-                        </>
-                    )
-                })
-                }
-            </select>
+  function recuperarGeneros(generoID) {
+    setListaGeneros([...listaGeneros, generoID])
+}
 
-            <label className='MC__label'>¿Cómo está el clima?</label>
-            <select name="" id="" className='MC__select'>          
-            <option disabled selected>Clima</option>
-                {listaClima.map((clima) => {
-                    return(
-                        <>
-                            <option key={clima.id} value={clima.id}>
-                                {clima.nombre}
-                            </option>
-                        </>
-                    )
-                })
+function crearPlaylist() {
+  musicaContextual(listaGeneros)
+  setVerPlaylist("ver")
+  setVerMusicaContextual("noVer")
+}
 
-                }
-            </select>
+  const {
+    verActividad,
+    verEstadoAnimo,
+    verClima,
+    verGenero,
+    listaActividad,
+    listaEstadoAnimo,
+    listaClima,
+    listaGenero,
+  } = useMusicaContextual();
+
+  useEffect(() => {
+    verActividad(), verEstadoAnimo(), verClima(), verGenero();
+  }, []);
+  return (
+    <>
+    <div className={verMusicaContextual}>
+      <Header titulo="Música Contextual" />
+      <div className="contenedor__MContextual">
         
+        <form action="">
+            <div className="MC_selects__contenedor">
+          <label className="MC__label">¿Cuál es la ocasión?</label>
+          <select name="" id="" className="MC__select">
+            <option disabled selected>
+              Actividad
+            </option>
+            {listaActividad.map((actividad) => {
+              return (
+                <>
+                  <option key={actividad.id} value={actividad.id}>
+                    {actividad.nombre}
+                  </option>
+                </>
+              );
+            })}
+          </select>
 
-        <div className='MC__genero'>
-       
+          <label className="MC__label">¿Cómo te sientes?</label>
+          <select name="" id="" className="MC__select">
+            <option disabled selected>
+              Estado de Ánimo
+            </option>
+            {listaEstadoAnimo.map((estadoAnimo) => {
+              return (
+                <>
+                  <option key={estadoAnimo.id} value={estadoAnimo.id}>
+                    {estadoAnimo.nombre}
+                  </option>
+                </>
+              );
+            })}
+          </select>
+
+          <label className="MC__label">¿Cómo está el clima?</label>
+          <select name="" id="" className="MC__select">
+            <option disabled selected>
+              Clima
+            </option>
+            {listaClima.map((clima) => {
+              return (
+                <>
+                  <option key={clima.id} value={clima.id}>
+                    {clima.nombre}
+                  </option>
+                </>
+              );
+            })}
+          </select>
+          </div>
+
+          <div className="MC__genero">
+            <p className="MC__label">Selecciona hasta 3 géneros:</p>
             <div className="genero__contenedor">
-            <p className='MC__label'>Selecciona hasta 3 géneros:</p>
-                {listaGenero.map((genero) => {
-                    return(
-                        <>
-                        <span className="genero__item" key={genero.id}>{genero.nombre}</span>
-                        </>
-                    )
-                })}
+              {listaGenero.map((genero) => {
+                return (
+                  <>
+                    <span onClick={() => recuperarGeneros(genero.id)} className="genero__item" key={genero.id}>
+                      {genero.nombre}
+                    </span>
+                  </>
+                );
+              })}
             </div>
-        </div>
-
-        <button className='MC__boton'>Crear Playlist</button>
+          </div>  
         </form>
-        </div>
-        </>
-    )
+        <button className="MC__boton" onClick={crearPlaylist}>Crear Playlist</button>
+      </div>
+      </div>
+
+      <div className={verPlaylist}>
+                <Playlist playlist={playlistMC} />
+            </div>
+    </>
+  );
 }

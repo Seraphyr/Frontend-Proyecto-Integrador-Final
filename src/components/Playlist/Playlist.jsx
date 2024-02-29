@@ -82,7 +82,6 @@ export default function Playlist({playlist}) {
                 )
             })
         }
- {/* Aca se llama componente que agrega lista con img del artista, titulo cancion y nombre artista */}
                 </div>
                 <Barra />
             </div>

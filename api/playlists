@@ -1,5 +1,5 @@
 
-
+/* 
 export const playlists = async () => {
     let url = "http://localhost:3000/playlist";
     try {
@@ -12,4 +12,4 @@ export const playlists = async () => {
     } catch (error) {
       throw error;
     }
-  };
+  }; */

@@ -1,5 +1,8 @@
 
 .fixed-bar{
+    width: 368px;
+    position: fixed;
+    bottom: 40px;
     display: flex;
     justify-content: space-around; 
     position: fixed;

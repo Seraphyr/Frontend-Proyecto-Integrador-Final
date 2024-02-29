@@ -21,12 +21,12 @@ export default function Home() {
             <div className="title-container">
                 <h1 className="title">Música ya</h1>
                 <div className="icons">
-                    <Link to="/">
+                    <Link to="/home">
                         <button className='btn'>
                             <img src="/history.png" alt="History" />
                         </button>
                     </Link>
-                    <Link to="/">
+                    <Link to="/home">
                         <button className='btn'>
                             <img src="/bell.png" alt="Bell" />
                         </button>
@@ -35,7 +35,7 @@ export default function Home() {
             </div>
             <div className="container">
     <div className="item">
-    <Link to="/">
+    <Link to="/cupidoMusical">
         <img src="/cupido-musical-illustration.png" alt="Angel"/></Link>
         <div>
             <h2>Cupido Musical</h2>
@@ -45,7 +45,7 @@ export default function Home() {
         </div>
     </div>
     <div className="item">
-    <Link to="/">
+    <Link to="/home">
         <img src="/contextual-illustration.png" alt="?" /></Link>
         <div>
             <h2>Música Contextual</h2>

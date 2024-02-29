@@ -1,4 +1,4 @@
-import './PerfilUsuario.css';
+import './perfilUsuario.css';
 import { Link } from "react-router-dom";
 import Header from '../Header/Header';
 import Barra from '../Barra/Barra';

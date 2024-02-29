@@ -16,17 +16,21 @@ export default function CupidoMusical() {
     const [verPlaylist, setVerPlaylist] = useState("noVer")
 
     const { verArtistas, listaArtistas } = useArtistas()
+    const { artistasRandom, verArtistasRandom } = useArtistas()
     const { cupidoMusical, playlist } = usePlaylist()
 
     const [listaID, setListaID] = useState([])
 
 
     function recuperarID(artistaID) {
-        setListaID([...listaID, artistaID])
+        setListaID([...listaID, artistaID]);
+        verArtistasRandom()
+
     }
 
     useEffect(() => {
         verArtistas()
+        verArtistasRandom()
     }, [])
 
     function crearPlaylist() {
@@ -40,7 +44,7 @@ export default function CupidoMusical() {
             <div className={verCupidoMusical}>
                 <Header titulo="Cupido Musical" />
 
-                {listaArtistas.map((artista) => (
+                {artistasRandom.map((artista) => (
                     <div key={artista.id} className="tarjeta">
                         <img src={artista.imagen} alt={artista.nombre} className="artist-img"/>
                         <p className="artist-name">{artista.nombre}</p>
@@ -48,7 +52,7 @@ export default function CupidoMusical() {
                             <button onClick={() => recuperarID(artista.id)} className="likeButton">
                                 <img src={likeIcon} alt="Like" />
                             </button>
-                            <button className="crossButton">
+                            <button onClick={() => verArtistasRandom()} className="crossButton">
                                 <img src={crossIcon} alt="Cross" />
                             </button>
                         </div>

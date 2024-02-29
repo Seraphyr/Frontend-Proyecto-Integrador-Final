@@ -45,7 +45,7 @@ export default function Home() {
         </div>
     </div>
     <div className="item">
-    <Link to="/home">
+    <Link to="/musicaContextual">
         <img src="/contextual-illustration.png" alt="?" /></Link>
         <div>
             <h2>Música Contextual</h2>

@@ -4,11 +4,8 @@
     position: fixed;
     bottom: 40px;
     display: flex;
-    justify-content: space-around; 
-    position: fixed;
-    bottom: 0; 
-    width: 100%;
-    max-height: 792px;
+    align-items: flex-end;
+    justify-content: space-around;
 }
 
 .icono-barra{

@@ -5,14 +5,18 @@ import usePlaylist from "../../../api/usePlaylist"
 import Header from "../Header/Header"
 import Playlist from "../Playlist/Playlist"
 
+import likeIcon from '/like.svg'
+import crossIcon from '/cross.svg'
+
+
 export default function CupidoMusical() {
 
-    
+
     const [verCupidoMusical, setVerCupidoMusical] = useState("ver")
     const [verPlaylist, setVerPlaylist] = useState("noVer")
 
-    const {verArtistas, listaArtistas} = useArtistas()
-    const {cupidoMusical, playlist} = usePlaylist()
+    const { verArtistas, listaArtistas } = useArtistas()
+    const { cupidoMusical, playlist } = usePlaylist()
 
     const [listaID, setListaID] = useState([])
 
@@ -25,36 +29,38 @@ export default function CupidoMusical() {
         verArtistas()
     }, [])
 
-    function crearPlaylist(){
-        cupidoMusical(listaID)  
+    function crearPlaylist() {
+        cupidoMusical(listaID)
         setVerPlaylist("ver")
         setVerCupidoMusical("noVer")
     }
 
     return (
         <>
-         <div className={verCupidoMusical}>
-        <Header titulo="Cupido Musical" />
-       
-        {
-            listaArtistas.map((artista) => {
-                return(
-                    <div key={artista.id}>
+            <div className={verCupidoMusical}>
+                <Header titulo="Cupido Musical" />
+
+                {listaArtistas.map((artista) => (
+                    <div key={artista.id} className="tarjeta">
+                        <img src={artista.imagen} alt={artista.nombre} className="artista-img"/>
                         <p>{artista.nombre}</p>
-                        <button onClick={() => recuperarID(artista.id)} className="id">Id</button>
+                        <div className="botones">
+                            <button onClick={() => recuperarID(artista.id)} className="likeButton">
+                                <img src={likeIcon} alt="Like" />
+                            </button>
+                            <button className="crossButton">
+                                <img src={crossIcon} alt="Cross" />
+                            </button>
+                        </div>
                     </div>
-                )
-            })
-        }
+                ))}
 
+                <button onClick={crearPlaylist}>Crear Playlist</button>
+            </div>
 
-
-        <button onClick={crearPlaylist}>Crear Playlist</button>
-        </div>
-
-        <div className={verPlaylist}>
-            <Playlist playlist={playlist}/>
-        </div>
+            <div className={verPlaylist}>
+                <Playlist playlist={playlist} />
+            </div>
         </>
     )
 }

@@ -42,8 +42,8 @@ export default function CupidoMusical() {
 
                 {listaArtistas.map((artista) => (
                     <div key={artista.id} className="tarjeta">
-                        <img src={artista.imagen} alt={artista.nombre} className="artista-img"/>
-                        <p>{artista.nombre}</p>
+                        <img src={artista.imagen} alt={artista.nombre} className="artist-img"/>
+                        <p className="artist-name">{artista.nombre}</p>
                         <div className="botones">
                             <button onClick={() => recuperarID(artista.id)} className="likeButton">
                                 <img src={likeIcon} alt="Like" />

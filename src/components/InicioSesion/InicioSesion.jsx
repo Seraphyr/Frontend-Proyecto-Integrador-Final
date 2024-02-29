@@ -35,7 +35,7 @@ export default function InicioSesion() {
                         <input name="password" className="input-form" type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
                         <img src={showPassword ? eyeOpen : eyeClosed} alt="toggle password visibility" onClick={togglePasswordVisibility} className='eye-icon' />
                     </div>
-                    <button type="submit">Iniciar Sesión</button>
+                    <button type="submit" className='btn-inicio'>Iniciar Sesión</button>
                 </form>
 
                 <div className="passChange">¿Olvidaste tu contraseña?</div>

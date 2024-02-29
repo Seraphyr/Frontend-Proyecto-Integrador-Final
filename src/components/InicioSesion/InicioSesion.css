@@ -2,14 +2,14 @@
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    padding: 24px 24px 24px 24px;
+    padding: 24px 24px 35px 24px;
 
 }
 
 label {
     font-family: rubik, sans-serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 700;
     line-height: 30.81px;
     letter-spacing: -0.79px;
     display: flex;
@@ -20,7 +20,7 @@ label {
 .input-form {
     padding: 10px;
     margin: 10px 0;
-    width: 250px;
+    width: 318px;
     border-radius: 0px 16px 0px 16px;
     border: 2px solid #BFC0C1;
     color: black;
@@ -34,15 +34,15 @@ label {
 
 .input-form:focus {
     outline: none;
-    border: 2px solid #FF8E0A
+    border: 2px solid #FF8E0A;
 }
 
 .eye-icon {
     position: absolute;
     width: 28px;
     height: 27px;
-    left: 14rem;
-    top: 17.5rem;
+    left: 67rem;
+    top: 21rem;
     z-index: 3;
     cursor: pointer;
 }
@@ -51,10 +51,20 @@ label {
     cursor: pointer;
     font-family: rubik, sans-serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 700;
     font-style: bold;
     line-height: 30.81px;
     letter-spacing: -0.79px;
     text-align: center;
     margin-top: 10px;
+}
+.btn-inicio {
+   margin-top: 5rem;
+}
+@media (max-width: 768px) {
+    .eye-icon {
+        position: fixed;
+        top: 17.3rem; 
+        left: 18.2rem; 
+    }
 }

@@ -13,6 +13,7 @@ import CupidoMusical from './components/CupidoMusical/CupidoMusical.jsx';
 import Buscador from './components/Buscador/Buscador.jsx';
 import Playlist from './components/Playlist/Playlist.jsx'
 import MusicaContextual from './components/MusicaContextual/MusicaContextual.jsx';
+import Error404 from './components/Error404/Error404.jsx';
 
 
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <Error404/>,
     children: [
       {
         path: "/",

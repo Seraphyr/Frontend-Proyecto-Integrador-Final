@@ -15,10 +15,10 @@ export default function InicioSesion() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
-    console.log(email);
+   /*  console.log(email);
     console.log(username);
     console.log(password);
-
+ */
 
     return(
         <>

@@ -74,10 +74,12 @@ export default function Playlist({playlist}) {
             playlist.map((cancion) => {
                 return(
                     <div key={cancion.id} className='cancion'>
-                        <p>{cancion.nombre}</p> 
-                        <img src={cancion.imagen} alt="" className='cancion__imagen'/>  
-                        <p>{cancion.nombre_artista}</p>
-                        <p>{cancion.duracion.minutes}.{cancion.duracion.seconds}</p>   
+                        <img src={cancion.imagen} alt="" className='cancion__imagen'/> 
+                        <div className='cancion__info'>
+                        <p className='cancion__nombre'>{cancion.nombre}</p> 
+                        <p className='cancion__artista'>{cancion.nombre_artista}</p>
+                        </div> 
+                        <p className='cancion__duración'>{cancion.duracion.minutes}.{cancion.duracion.seconds}m</p>   
                         </div>
                 )
             })

@@ -25,7 +25,7 @@ function Profile() {
             <h1>{nombreUsuario}</h1>
             <br />
           </div>
-          <Link link to="/settings">
+          <Link to="/settings">
             <div className="icon-container">
               <img className="setting-icon" src="/setting.png" alt="" />
             </div>

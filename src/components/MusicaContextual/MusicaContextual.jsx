@@ -15,7 +15,11 @@ export default function MusicaContextual() {
   const [listaGeneros, setListaGeneros] = useState([])
 
   function recuperarGeneros(generoID) {
-    setListaGeneros([...listaGeneros, generoID])
+    if(listaGeneros.includes(generoID)){
+      setListaGeneros(listaGeneros.filter((c) => c !== generoID))
+    } if(listaGeneros.length < 3){  
+      setListaGeneros([...listaGeneros, generoID])
+    }
 }
 
 function crearPlaylist() {
@@ -47,49 +51,49 @@ function crearPlaylist() {
         <form action="">
             <div className="MC_selects__contenedor">
           <label className="MC__label">¿Cuál es la ocasión?</label>
-          <select name="" id="" className="MC__select">
-            <option disabled selected>
+          <select name="" id="" className="MC__select" defaultValue="Actividad">
+            <option disabled>
               Actividad
             </option>
             {listaActividad.map((actividad) => {
               return (
-                <>
+                
                   <option key={actividad.id} value={actividad.id}>
                     {actividad.nombre}
                   </option>
-                </>
+                
               );
             })}
           </select>
 
           <label className="MC__label">¿Cómo te sientes?</label>
-          <select name="" id="" className="MC__select">
-            <option disabled selected>
+          <select name="" id="" className="MC__select" defaultValue="Estado de Ánimo">
+            <option disabled>
               Estado de Ánimo
             </option>
             {listaEstadoAnimo.map((estadoAnimo) => {
               return (
-                <>
+                
                   <option key={estadoAnimo.id} value={estadoAnimo.id}>
                     {estadoAnimo.nombre}
                   </option>
-                </>
+                
               );
             })}
           </select>
 
           <label className="MC__label">¿Cómo está el clima?</label>
-          <select name="" id="" className="MC__select">
-            <option disabled selected>
+          <select name="" id="" className="MC__select" defaultValue="Clima">
+            <option disabled>
               Clima
             </option>
             {listaClima.map((clima) => {
               return (
-                <>
+                
                   <option key={clima.id} value={clima.id}>
                     {clima.nombre}
                   </option>
-                </>
+                
               );
             })}
           </select>
@@ -100,11 +104,12 @@ function crearPlaylist() {
             <div className="genero__contenedor">
               {listaGenero.map((genero) => {
                 return (
-                  <>
-                    <span onClick={() => recuperarGeneros(genero.id)} className="genero__item" key={genero.id}>
+                  
+                    <span onClick={() => recuperarGeneros(genero.id)} className={`genero__item ${listaGeneros.includes(genero.id) ? 'generoSeleccionado' : ''}`}
+                    key={genero.id}>
                       {genero.nombre}
                     </span>
-                  </>
+                  
                 );
               })}
             </div>

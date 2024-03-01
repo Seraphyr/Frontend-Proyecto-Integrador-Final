@@ -4,6 +4,7 @@ import useMusicaContextual from "../../../api/useMusicaContextual";
 import { useEffect, useState } from "react";
 import usePlaylist from "../../../api/usePlaylist";
 import Playlist from "../Playlist/Playlist"
+import { useLoading } from "../../../api/useLoading";
 
 export default function MusicaContextual() {
 
@@ -13,6 +14,7 @@ export default function MusicaContextual() {
   const {musicaContextual, playlistMC} = usePlaylist()
 
   const [listaGeneros, setListaGeneros] = useState([])
+  const {loading, startLoading, stopLoading} = useLoading()
 
   function recuperarGeneros(generoID) {
     if(listaGeneros.includes(generoID)){
@@ -23,9 +25,15 @@ export default function MusicaContextual() {
 }
 
 function crearPlaylist() {
+  startLoading();
   musicaContextual(listaGeneros)
   setVerPlaylist("ver")
   setVerMusicaContextual("noVer")
+  stopLoading();
+}
+
+if (loading) {
+  return <Load />;
 }
 
   const {

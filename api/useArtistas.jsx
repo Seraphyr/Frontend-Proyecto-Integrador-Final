@@ -7,13 +7,24 @@ export default function useArtistas(){
     const [artistasRandom, setArtistasRandom] = useState([])
 
     const verArtistas = async () => {
-        const response = await fetch("http://localhost:3000/verArtistas")
+        const response = await fetch("http://localhost:3000/verArtistas",{
+        headers: {
+            "Content-Type": "application/json",
+            token: Cookies.get("token"),
+        }
+    })
+
         const data = await response.json();
 
         setListaArtistas(data)
     }
     const verArtistasRandom = async () => {
-        const response = await fetch("http://localhost:3000/artistasRandom")
+        const response = await fetch("http://localhost:3000/artistasRandom",{
+            headers: {
+                "Content-Type": "application/json",
+                token: Cookies.get("token"),
+            }
+        })
         const data = await response.json();
         console.log(data);
         setArtistasRandom(data)

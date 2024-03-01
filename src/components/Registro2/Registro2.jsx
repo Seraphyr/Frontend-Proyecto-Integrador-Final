@@ -32,10 +32,13 @@ export default function Registro2({
 
   async function handleOnSumbit(e) {
     e.preventDefault();
-    setUsername(e.target["registroNombre"].value);
-    setPassword(e.target["registroContra"].value);
+   /*  setUsername(e.target["registroNombre"].value); */
+    /* setPassword(e.target["registroContra"].value); */
     setVerRegistro1("ver");
     setVerRegistro2("noVer");
+    console.log(email);
+    console.log(username);
+    console.log(password);
     registro(email, username, password);
   }
 
@@ -54,6 +57,8 @@ export default function Registro2({
               className="registro__input2"
               name="registroNombre"
               id="registroNombre"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <p className="registro__parrafo2">Contraseña:</p>
             <div className="registro__password">

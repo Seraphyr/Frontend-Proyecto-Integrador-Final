@@ -4,7 +4,6 @@ import { useEffect } from "react";
 
 export default function useUsuarios(){
     const navigate = useNavigate();
-    /* const [username, setUsername] = useEffect() */
 
     const login = async (username, password) => {
         const response = await fetch("http://localhost:3000/login", {
@@ -44,8 +43,12 @@ export default function useUsuarios(){
         })
 
         const data = await response.json()
-        console.log(data);
-        navigate("/")
+        if (response.ok) {
+            navigate("/home")
+        } else {
+            alert(data.error)
+        }
+        navigate("/") 
     }
 
     return{

@@ -2,10 +2,19 @@ import './perfilUsuario.css';
 import { Link } from "react-router-dom";
 import Header from '../Header/Header';
 import Barra from '../Barra/Barra';
+import useUsuarios from '../../../api/useUsuarios';
+import { useEffect } from 'react';
 
 function Profile() {
-  
+  const {verNombre, nombreUsuario} = useUsuarios()
+
+  useEffect(() => {
+    verNombre()
+  }, [])
+
+ 
   return (
+    
     <>
     <div className="wrapper-profile">
       <header>
@@ -13,7 +22,7 @@ function Profile() {
         <div className="info-profile">
           <img className="profile-img" src="/logo-gradient-letter.png" alt="" />
           <div className="name-user-profile">
-            <h1>Nombre</h1>
+            <h1>{nombreUsuario}</h1>
             <br />
           </div>
           <Link link to="/settings">

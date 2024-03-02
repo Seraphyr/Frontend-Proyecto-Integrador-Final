@@ -2,13 +2,13 @@ import './Settings.css';
 import Header from '../Header/Header';
 import { useNavigate } from 'react-router-dom';
 import React from 'react'
+import Cookies from "js-cookie";
 
 export default function Settings() {
     const navigate = useNavigate();
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/");
-    console.log(localStorage)
+    Cookies.remove('token')
+    navigate('/')
   };
   return (
     <>

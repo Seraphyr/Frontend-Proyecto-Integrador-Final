@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import usePlaylist from "../../../api/usePlaylist";
 import Playlist from "../Playlist/Playlist"
 import { useLoading } from "../../../api/useLoading";
+import Load from "../Load/Load";
 
 export default function MusicaContextual() {
 
@@ -24,17 +25,16 @@ export default function MusicaContextual() {
     }
 }
 
-function crearPlaylist() {
+async function crearPlaylist() {
   startLoading();
-  musicaContextual(listaGeneros)
-  setVerPlaylist("ver")
-  setVerMusicaContextual("noVer")
+  await musicaContextual(listaGeneros);
+  setVerPlaylist("ver");
+  setVerMusicaContextual("noVer");
   stopLoading();
 }
 
-if (loading) {
-  return <Load />;
-}
+
+
 
   const {
     verActividad,
@@ -51,7 +51,8 @@ if (loading) {
     verActividad(), verEstadoAnimo(), verClima(), verGenero();
   }, []);
   return (
-    <>
+    <div>
+    {loading ? <Load /> : <>
     <div className={verMusicaContextual}>
       <Header titulo="Música Contextual" />
       <div className="contenedor__MContextual">
@@ -130,7 +131,10 @@ if (loading) {
       <div className={verPlaylist}>
                 <Playlist playlist={playlistMC} />
             </div>
-    </>
+    </>}
+    </div>
+
+    
   );
 }
 

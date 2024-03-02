@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function useUsuarios(){
     const navigate = useNavigate();
+    const [nombreUsuario, setNombreUsuario] = useState()
 
     const login = async (username, password) => {
         const response = await fetch("http://localhost:3000/login", {
@@ -51,9 +52,23 @@ export default function useUsuarios(){
         navigate("/") 
     }
 
+    const verNombre = async () => {
+        const response = await fetch("http://localhost:3000/verNombre",{
+            headers: {
+                "Content-Type": "application/json",
+                token: Cookies.get("token"),
+            }
+        })
+    
+            const data = await response.json();
+            setNombreUsuario(data[0].nombre_de_usuario)
+    }
+
     return{
         login,
-        registro
+        registro,
+        verNombre,
+        nombreUsuario
     }
     
 }

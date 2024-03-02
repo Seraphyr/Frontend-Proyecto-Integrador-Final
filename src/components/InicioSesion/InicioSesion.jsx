@@ -11,6 +11,8 @@ export default function InicioSesion() {
 
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false)
+    const [username, setUsername] = useState("");
+    const isSubmitDisabled = !username || !password;
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -29,13 +31,13 @@ export default function InicioSesion() {
 
                 <form className="form-inicio" onSubmit={handleOnSumbit}>
                     <label>Nombre de Usuario o E-mail:</label>
-                    <input className="input-form" type="text" name="username" />
+                    <input className="input-form" type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)}/>
                     <label >Contraseña:</label>
                     <div>
                         <input name="password" className="input-form" type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
                         <img src={showPassword ? eyeOpen : eyeClosed} alt="toggle password visibility" onClick={togglePasswordVisibility} className='eye-icon' />
                     </div>
-                    <button type="submit" className='btn-inicio'>Iniciar Sesión</button>
+                    <button type="submit" className={`${isSubmitDisabled ? 'disabled-btn' : 'btn-inicio'}`} disabled = {isSubmitDisabled}>Iniciar Sesión</button>
                 </form>
 
                 <div className="passChange">¿Olvidaste tu contraseña?</div>

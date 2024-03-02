@@ -46,6 +46,7 @@ label {
     z-index: 3;
     cursor: pointer;
 }
+
 .passChange {
     color: black;
     cursor: pointer;
@@ -58,13 +59,24 @@ label {
     text-align: center;
     margin-top: 10px;
 }
-.btn-inicio {
-   margin-top: 5rem;
+
+.disabled-btn {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    margin-top: 5rem;
 }
+
+.btn-inicio {
+    margin-top: 5rem;
+    background-color: #FF8E0A;
+    color: white;
+}
+
 @media (max-width: 768px) {
     .eye-icon {
         position: fixed;
-        top: 17.3rem; 
-        left: 18.2rem; 
+        top: 17.3rem;
+        left: 18.2rem;
     }
 }

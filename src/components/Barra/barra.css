@@ -1,8 +1,8 @@
-
 .fixed-bar{
-    width: 368px;
+    width: 100%;
+    max-width: 368px;
     position: fixed;
-    bottom: 40px;
+    bottom: 10px;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -11,4 +11,11 @@
 .icono-barra{
    width: 27px;
    height: auto;
+}
+
+
+@media (max-width: 600px) {
+    .icono-barra{
+       width: 27px;
+    }
 }

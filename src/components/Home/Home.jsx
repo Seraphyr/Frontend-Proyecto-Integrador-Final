@@ -56,12 +56,6 @@ export default function Home() {
     </div>
 </div>
 <Barra />
-{/* <div className="icon-bar">
-    <img src="/home.png" alt="Home" />
-    <img src="/search.png" alt="Search" />
-    <img src="/user-profile.png" alt="Profile" />
-    <img src="/friends.png" alt="Friends" />
-</div> */}
         </>
     )
 }

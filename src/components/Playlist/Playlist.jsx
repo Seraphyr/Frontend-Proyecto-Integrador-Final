@@ -2,39 +2,13 @@ import './playlist.css'
 import Header from '../Header/Header';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-/* import { playlists } from '../../../api/playlists'; */
 import Barra from '../Barra/Barra';
+import imagenPlaylist from '/imagenPlaylist.jpg'
 
 
 export default function Playlist({playlist}) {
 
-    /* const [newPlaylist, setNewPlaylist] = useState([]);
-    const { id } = useParams();
-    const initialValue = 0;
-    useEffect(() => {
-        const getPLaylists = async () => {
-            try {
-                const response = await playlists(`/${id}`);
-                console.log(response);
-                setNewPlaylist(response);
-                console.log(newPlaylist);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getPLaylists();
-    }, []);
-
-
-    const durationSong = () => {
-        const result = newPlaylist.reduce((accumulator, song) => {
-            return accumulator + song.song_duration;
-        }, initialValue);
-        return result >= 3600
-            ? `${Math.floor(result / 3600)}h ${Math.floor(result / 60)}m`
-            : ` ${Math.floor(result / 60)}m ${result % 60}s`;
-    };
- */
+  
 
 
     return (
@@ -43,7 +17,7 @@ export default function Playlist({playlist}) {
             <div className="wrapper-playlist-generated gradient-top">
 
                 <div className="center-covers">
-                    <img src="/icon-placeholder.svg" alt="" />
+                    <img src={imagenPlaylist} alt="" className='imagen__playlist'/>
                 </div>
                 <section className="wrapper-icons-pg">
                     <div className="row-icons ">

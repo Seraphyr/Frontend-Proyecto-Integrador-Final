@@ -6,6 +6,7 @@ export default function usePlaylist(){
 
     const [playlist, setPlaylist] = useState([])
     const [playlistMC, setPlaylistMC] = useState([])
+    const [playlistUsuario, setPlaylistUsuario] = useState([])
 
     const cupidoMusical = async (listaArtistas) => {
         const response = await fetch("http://localhost:3000/crearCupidoMusical",{
@@ -40,12 +41,25 @@ export default function usePlaylist(){
         setPlaylistMC(data)
     }
 
+    const verPlaylistUsuario = async () => {
+        const response = await fetch("http://localhost:3000/verPlaylistUsuario",{
+            headers: {
+                "Content-Type": "application/json",
+                token: Cookies.get("token"),
+            }
+        })
+        const data = await response.json()
+        setPlaylistUsuario(data)
+    }
+
 
 return{
     cupidoMusical,
     playlist,
     musicaContextual,
-    playlistMC
+    playlistMC,
+    verPlaylistUsuario,
+    playlistUsuario
 }
 
 }

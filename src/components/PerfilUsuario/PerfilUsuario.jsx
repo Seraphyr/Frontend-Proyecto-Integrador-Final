@@ -4,12 +4,16 @@ import Header from '../Header/Header';
 import Barra from '../Barra/Barra';
 import useUsuarios from '../../../api/useUsuarios';
 import { useEffect } from 'react';
+import usePlaylist from '../../../api/usePlaylist';
+import imagenPlaylist from '/imagenPlaylist.jpg'
 
 function Profile() {
   const {verNombre, nombreUsuario} = useUsuarios()
+  const {verPlaylistUsuario, playlistUsuario} = usePlaylist()
 
   useEffect(() => {
     verNombre()
+    verPlaylistUsuario()
   }, [])
 
  
@@ -18,7 +22,6 @@ function Profile() {
     <>
     <div className="wrapper-profile">
       <header>
-      <Header titulo={"Perfil"} />
         <div className="info-profile">
           <img className="profile-img" src="/logo-gradient-letter.png" alt="" />
           <div className="name-user-profile">
@@ -43,6 +46,17 @@ function Profile() {
             </label>
           
         </div>
+  
+    <div className="playlist__usuario">
+     
+    {playlistUsuario.map((playlist) => (
+       <div className="playlist">
+        <img src={imagenPlaylist} alt="playlist" className='imagen__playlist'/>
+        <p key={playlist.id}>{playlist.nombre}</p>
+        </div>
+    ))}
+      
+    </div>
 
     </div>
       <Barra/>

@@ -57,7 +57,7 @@ export default function Playlist({playlist}) {
                         <img id="small-icon2" src="/clock.svg" alt="" />
                     </div>
                 </section>
-                <section className="wrapper-icons-pg ani-right-enter">
+                <section className="wrapper-icons-pg">
                     <div className="row-icons flex-span-start">
                         <img src="/copy.svg" alt="" />
                         <span>Crear Copia</span>

@@ -85,10 +85,10 @@ export default function Registro2({
             </div>
             <div className="contenedor__checkbox">
               <img src={checkbox ? checkboxCheck : checkboxNotCheck} alt="checkbox" onClick={cambiarCheckbox}/>
-              <label className="checkbox__label">
+              <p className="checkbox__label">
                 He leído y acepto los <span className="TyC"> &nbsp; Términos &nbsp;  </span> y
                 <span className="TyC"> &nbsp; Condiciones</span>
-              </label>
+              </p>
             </div>
             <div className="registro__boton2">
               <button className={`${habilitado ?  'disabled-btn': 'boton__registro2'}`} disabled={habilitado}>Continuar</button>

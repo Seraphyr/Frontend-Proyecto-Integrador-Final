@@ -61,35 +61,43 @@ async function crearPlaylist() {
             <div className="MC_selects__contenedor">
           <label className="MC__label">¿Cuál es la ocasión?</label>
           <select name="" id="" className="MC__select" defaultValue="Actividad">
-            <option disabled>
-              Actividad
-            </option>
-            {listaActividad.map((actividad) => {
-              return (
-                
-                  <option key={actividad.id} value={actividad.id}>
-                    {actividad.nombre}
-                  </option>
-                
-              );
-            })}
-          </select>
+  <option disabled>
+    Actividad
+  </option>
+  {listaActividad.map((actividad) => {
+    return (
+      <option key={actividad.id} value={actividad.id}>
+        {actividad.nombre}
+      </option>
+    );
+  })}
+</select>
 
-          <label className="MC__label">¿Cómo te sientes?</label>
-          <select name="" id="" className="MC__select" defaultValue="Estado de Ánimo">
-            <option disabled>
-              Estado de Ánimo
-            </option>
-            {listaEstadoAnimo.map((estadoAnimo) => {
-              return (
-                
-                  <option key={estadoAnimo.id} value={estadoAnimo.id}>
-                    {estadoAnimo.nombre}
-                  </option>
-                
-              );
-            })}
-          </select>
+<select name="" id="" className="MC__select" defaultValue="Estado de Ánimo">
+  <option disabled>
+    Estado de Ánimo
+  </option>
+  {listaEstadoAnimo.map((estadoAnimo) => {
+    return (
+      <option key={estadoAnimo.id} value={estadoAnimo.id}>
+        {estadoAnimo.nombre}
+      </option>
+    );
+  })}
+</select>
+
+<select name="" id="" className="MC__select" defaultValue="Clima">
+  <option disabled>
+    Clima
+  </option>
+  {listaClima.map((clima) => {
+    return (
+      <option key={clima.id} value={clima.id}>
+        {clima.nombre}
+      </option>
+    );
+  })}
+</select>
 
           <label className="MC__label">¿Cómo está el clima?</label>
           <select name="" id="" className="MC__select" defaultValue="Clima">

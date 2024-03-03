@@ -33,6 +33,7 @@
   flex-wrap: wrap;
   overflow-y: auto;
   max-height: 500px; 
+  scrollbar-width: none;
   
 }
 

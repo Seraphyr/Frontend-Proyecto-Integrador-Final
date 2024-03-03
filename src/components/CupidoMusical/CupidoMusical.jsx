@@ -44,6 +44,9 @@ export default function CupidoMusical() {
     listaFotosBorrar.pop()
     setListaID(listaFotosBorrar)
     verArtistasSeleccionados([...listaID]);
+    if (listaID.length == 0){
+      setVerMatches2("noVer")
+    }
   }
 
   return (

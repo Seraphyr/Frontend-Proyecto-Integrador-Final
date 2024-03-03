@@ -22,6 +22,8 @@ export default function Registro2({
 
   const [checkbox, setCheckbox] = useState(false)
 
+  const [habilitado, setHabilitado] = useState(true)
+
   function cambiarCheckbox() {
     setCheckbox(!checkbox)
   }
@@ -68,7 +70,11 @@ export default function Registro2({
               id="registroContra"
               type={showPasswordR ? "text" : "password"}
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) =>  {if (setPassword(e.target.value)){
+                setHabilitado(true);
+              } else {
+                setHabilitado(false);
+              }}}
             />
             <img
               src={showPasswordR ? eyeOpen : eyeClosed}
@@ -85,7 +91,7 @@ export default function Registro2({
               </label>
             </div>
             <div className="registro__boton2">
-              <button className="boton__registro2">Continuar</button>
+              <button className={`${habilitado ?  'disabled-btn': 'boton__registro2'}`} disabled={habilitado}>Continuar</button>
             </div>
           </form>
         </div>

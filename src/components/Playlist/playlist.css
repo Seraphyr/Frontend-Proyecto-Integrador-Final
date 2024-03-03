@@ -83,7 +83,7 @@
 }
 
 .main-playlist-wrap {
-  max-height: 400px;
+  max-height: 330px;
   overflow-y: scroll;
   scrollbar-width: none;
   margin: auto;

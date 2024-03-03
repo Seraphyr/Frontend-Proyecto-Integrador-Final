@@ -56,7 +56,6 @@ export default function CupidoMusical() {
 
         {artistasRandom.map((artista) => (
           <>
-            {" "}
             <div key={artista.id} className="tarjeta">
               <img
                 src={artista.imagen}
@@ -95,7 +94,7 @@ export default function CupidoMusical() {
         </div>
         <div className="imagenesSeleccionados">
           {listaSeleccionados.map((artista) => (
-            <img
+            <img key={artista.id}
               src={artista.imagen}
               alt="imagen"
               className="imagen__seleccionada"

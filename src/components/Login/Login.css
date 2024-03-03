@@ -25,9 +25,10 @@
 }
 
 .btn__login {
-    padding: 12px 50px;
-    margin: 10px 0;
-    width: 100%;   
+    top: 5rem;
+    padding: -12px 50px;
+    margin: -16px 0;
+    width: 300px;   
     border-radius: 0px 16px 0px 16px;
     border: none;
     background-color: #FF8E0A;
@@ -42,6 +43,7 @@
 .btn-transparente {
     background-color: transparent;
     color: black;
+    top: 5rem;
 }
 
 

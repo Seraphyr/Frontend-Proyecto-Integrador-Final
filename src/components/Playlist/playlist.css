@@ -131,3 +131,7 @@
   width: 150px;
   height: 150px;
 }
+
+.playlist__barra{
+  margin-left: -20px;
+}

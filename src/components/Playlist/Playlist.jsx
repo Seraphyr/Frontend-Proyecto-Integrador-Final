@@ -4,8 +4,19 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Barra from "../Barra/Barra";
 import imagenPlaylist from "/imagenPlaylist.jpg";
+import usePlaylist from "../../../api/usePlaylist";
 
 export default function Playlist({ playlist }) {
+
+  const {verDuracionPlaylist, duracionTotalMinutes, duracionTotalSeconds } = usePlaylist()
+  let listaCanciones = []
+
+  useEffect(() => {
+    verDuracionPlaylist(listaCanciones)
+    }, []);
+
+
+    
   return (
     <div>
       <Header titulo={"Playlist Generada"} />
@@ -21,7 +32,7 @@ export default function Playlist({ playlist }) {
           </div>
 
           <div className="row-icons flex-span">
-            <span>{/* {durationSong()} */}</span>
+            <span>{duracionTotalMinutes}.{duracionTotalSeconds}m</span>
             <img id="small-icon2" src="/clock.svg" alt="" />
           </div>
         </section>
@@ -39,6 +50,7 @@ export default function Playlist({ playlist }) {
           <div className="list-songs-pg" />
 
           {playlist.map((cancion) => {
+            listaCanciones.push(cancion.id)
             return (
               <div key={cancion.id} className="cancion">
                 <img src={cancion.imagen} alt="" className="cancion__imagen" />
@@ -48,7 +60,7 @@ export default function Playlist({ playlist }) {
                 </div>
                 <p className="cancion__duración">
                   {cancion.duracion.minutes}.{cancion.duracion.seconds}m
-                </p>
+                </p>              
               </div>
             );
           })}

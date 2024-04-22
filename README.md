@@ -1,8 +1,5 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Proyecto Integrador Final del bootcamp de Desarrollo Web Full Stack dictado por Senpai Academy 2023-2024. 
+El proyecto consta de 2 repositorios, Frontend: https://github.com/Seraphyr/Frontend-Proyecto-Integrador-Final
+                                      Backend: https://github.com/Seraphyr/Backend-Proyecto-Integrador-Final
+Dentro del repositorio Backend se encuentra el archivo SQL hecho con sentencias PostgreSQL para crear la DB correspondiente para probar dicho proyecto.
+                                    
